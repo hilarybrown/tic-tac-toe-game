@@ -33,5 +33,35 @@
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"id="square-8"></div>
 </div>
 </div>
+
+<h1>User Actions</h1>
+<div id="message"></div>
+<form id="sign-up">
+  <fieldset>
+    <legend>Create User</legend>
+    <input type="text" name="credentials[email]" placeholder="Enter Email">
+    <input type="text" name="credentials[password]" placeholder="Enter Password">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+    <input type="submit" name="submit" value="Create User">
+  </fieldset>
+</form>
+
+<form id="sign-in">
+  <fieldset>
+    <legend>Sign In</legend>
+    <input type="text" name="credentials[email]" placeholder="Enter Email">
+    <input type="text" name="credentials[password]" placeholder="Enter Password">
+    <input type="submit" name="submit" value="Sign In">
+  </fieldset>
+</form>
+
+<form id="change-password">
+  <fieldset>
+    <legend>Change Password</legend>
+    <input type="text" name="passwords[old]" placeholder="Old Password">
+    <input type="text" name="passwords[new]" placeholder="New Password">
+    <input type="submit" name="submit" value="Change password">
+  </fieldset>
+</form>
     </body>
 </html>

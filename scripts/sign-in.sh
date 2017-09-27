@@ -1,7 +1,7 @@
 # API="${API_ORIGIN:-http://localhost:7165}"
-# URL_PATH="/sign-up"
+# URL_PATH="/sign-in"
 API="${API_ORIGIN:-https://hilarybrown.github.io/tic-tac-toe-game}"
-URL_PATH="/sign-up"
+URL_PATH="/sign-in"
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -10,8 +10,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'",
-      "password_confirmation": "'"${PASSWORD}"'"
+      "password": "'"${PASSWORD}"'"
     }
   }'
 

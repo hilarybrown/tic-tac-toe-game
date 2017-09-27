@@ -1,17 +1,17 @@
 # API="${API_ORIGIN:-http://localhost:7165}"
-# URL_PATH="/sign-up"
+# URL_PATH="/patch?id=${ID}"
 API="${API_ORIGIN:-https://hilarybrown.github.io/tic-tac-toe-game}"
-URL_PATH="/sign-up"
+URL_PATH="/change-password/${ID}"
 
 curl "${API}${URL_PATH}" \
   --include \
-  --request POST \
+  --request PATCH \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "credentials": {
-      "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'",
-      "password_confirmation": "'"${PASSWORD}"'"
+    "passwords": {
+      "old": "'"${OLD_PASSWORD}"'",
+      "new": "'"${NEW_PASSWORD}"'"
     }
   }'
 

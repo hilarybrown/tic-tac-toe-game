@@ -1,8 +1,6 @@
 'use strict'
 
-// the output of these functions is important for displaying win/loss message in tic-tac-toe
-
-// const store = require('../store')
+const store = require('../store')
 
 const signUpSuccess = function (data) {
   console.log(data)
@@ -13,7 +11,33 @@ const signUpFailure = function (error) {
   console.error(error)
   $('#message').text('Error on sign up')
 }
+
+const signInSuccess = function (data) {
+  console.log(data)
+  $('#message').text('Signed in successfully')
+  store.user = data.user
+}
+
+const signInFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on sign in')
+}
+
+const changePasswordSuccess = function (data) {
+  console.log('Changed password successfully')
+  $('#message').text('Changed password successfully')
+}
+
+const changePasswordFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on password change')
+}
+
 module.exports = {
   signUpSuccess,
-  signUpFailure
+  signUpFailure,
+  signInSuccess,
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }
