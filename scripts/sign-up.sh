@@ -1,7 +1,7 @@
-# API="${API_ORIGIN:-http://localhost:7165}"
-# URL_PATH="/sign-up"
-API="${API_ORIGIN:-https://hilarybrown.github.io/tic-tac-toe-game}"
+API="${API_ORIGIN:-http://localhost:7165}"
 URL_PATH="/sign-up"
+# API="${API_ORIGIN:-https://hilarybrown.github.io/tic-tac-toe-game}"
+# URL_PATH="/sign-up"
 
 curl "${API}${URL_PATH}" \
   --include \
