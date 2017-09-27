@@ -1,7 +1,6 @@
 'use strict'
 
-const gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
-
-const winner = function () {
-  if
-}
+// const gameBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+//
+// const winner = function () {
+// }
