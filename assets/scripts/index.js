@@ -15,5 +15,5 @@ $(() => {
 // require('./example')
 
 $(() => {
-  gameEvents.addHandlers()
+  gameEvents.addGameHandlers()
 })
