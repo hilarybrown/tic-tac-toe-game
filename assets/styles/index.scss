@@ -1,2 +1,33 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #3b465e;
+$font-color: #dfdfdf;
+$white: #fff;
+$top-margin: 5%;
+$side-margin: 15%;
+$row-height: 200px;
+$row-width: 600px;
+$box-width: 200px;
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+}
+
+.box {
+  border: 1px solid $white;
+  height: $row-height;
+}
+
+.gameBoard {
+  height: 600px;
+  margin: $top-margin $side-margin;
+  text-align: center;
+  width: 600px;
+}
+
+.row {
+  height: $row-height;
+  width: $row-width;
+}
