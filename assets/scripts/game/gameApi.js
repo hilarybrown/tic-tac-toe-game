@@ -17,6 +17,7 @@ const updateGame = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
+    contentType: 'application/json',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

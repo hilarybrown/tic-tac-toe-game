@@ -6,7 +6,7 @@ const createGameSuccess = function (data) {
   store.game = data.game
   $('#game-board').show()
   console.log(store.game)
-  $('#game-message').text('Here/s your game. Let/s play!')
+  $('#game-message').text('Here is your game. Play on!')
 }
 
 const createGameFailure = function (error) {

@@ -27,7 +27,7 @@ const onUpdateGame = function (index, value, over) {
     }
   }
   console.log(data)
-  gameApi.updateGame(data)
+  gameApi.updateGame(JSON.stringify(data))
     .then(gameUi.updateGameSuccess)
     .catch(gameUi.updateGameError)
 }
