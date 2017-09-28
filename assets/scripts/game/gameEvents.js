@@ -62,10 +62,11 @@ const setClickValue = function () {
   console.log(player)
 }
 
+// below code to find a winner and determine a draw not working
 // if statements to find winning combinations for either player and display message
-const findWinner = function () {
+const findWinner = function (gameBoard, player) {
   // start with winner = false & when a winning combo is found, winner is then set to true
-  // let winner = false
+  let winner = false
   if ((gameBoard[0] === gameBoard[3] === gameBoard[6] === 'O') ||
      (gameBoard[1] === gameBoard[4] === gameBoard[7] === 'O') ||
      (gameBoard[2] === gameBoard[5] === gameBoard[8] === 'O') ||
@@ -74,7 +75,7 @@ const findWinner = function () {
      (gameBoard[6] === gameBoard[7] === gameBoard[8] === 'O') ||
      (gameBoard[0] === gameBoard[4] === gameBoard[8] === 'O') ||
      (gameBoard[2] === gameBoard[4] === gameBoard[6] === 'O')) {
-    // winner = true
+    winner = true
     console.log('Player O won!')
     $('#winner-message').text('Player O won!')
     return 'Player O won!'
@@ -94,6 +95,7 @@ const findWinner = function () {
 }
 
 // determines if a game is a draw & displays message
+// not working. because murphy's law.
 const noWinner = function (moveCount, winner) {
   if (moveCount === 8 && winner === false) {
     console.log('Out of moves with no winner. Try again.')
