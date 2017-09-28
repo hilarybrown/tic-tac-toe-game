@@ -1,17 +1,12 @@
-API="${API_ORIGIN:-http://localhost:7165"
-URL_PATH="/post"
-# API="${API_ORIGIN:-https://hilarybrown.github.io/tic-tac-toe-game/}"
-# URL_PATH="/create-game"
+# API="${API_ORIGIN:-http://httpbin.org}"
+# URL_PATH="/post"
+API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
+URL_PATH="/new-game"
+# API="${API_ORIGIN:-https://aqueous-atoll-85096.herokuapp.com/}"
+# URL_PATH="/new-game"
 
-curl "${API}${URL_PATH}" \
-  --include \
-  --request POST \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=${TOKEN}" \
-  --data '{
-    "game": {
-      "id": "'"${ID}"'",
-    }
-  }'
+curl --include --request POST "${API}${URL_PATH}" \
+  --header "Authorization: Token token=$TOKEN" \
+  --header "Content-Type: application/json"
 
 echo
