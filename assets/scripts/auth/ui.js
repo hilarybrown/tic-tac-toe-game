@@ -54,6 +54,7 @@ const signOutSuccess = function (data) {
   console.log('Signed out successfully')
   $('#user-action-message').text('Come back again soon!')
   store.user = null
+  $('#game-board')[0].reset()
   $('#sign-in')[0].reset()
   $('#sign-up')[0].reset()
   $('#sign-in-message').show()
