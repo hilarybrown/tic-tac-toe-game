@@ -14,6 +14,24 @@ const onCreateGame = function (event) {
     .catch(gameUi.createGameFailure)
 }
 
+// this code is not working. need to take a look into why
+const onUpdateGame = function (index, value, over) {
+  console.log('onUpdateGame is ' + onUpdateGame)
+  const data = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': value
+      },
+      'over': over
+    }
+  }
+  console.log(data)
+  gameApi.updateGame(data)
+    .then(gameUi.updateGameSuccess)
+    .catch(gameUi.updateGameError)
+}
+
 // Begin Game Logic
 // game board is made up of an empty array of 9
 const gameBoard = ['', '', '', '', '', '', '', '', '']
@@ -31,6 +49,7 @@ const togglePlayer = function () {
   } else {
     player = playerX
   }
+  onUpdateGame()
   // only display game message of next move if there is no current winner
   if (winner === false && moreMoves === true) {
     $('#game-message').text('Player ' + player + ' has the next move')
@@ -101,8 +120,9 @@ const noWinner = function () {
 }
 
 const addHandlers = function () {
-  $('#new-game').on('click', onCreateGame)
+  $('#new-game').on('submit', onCreateGame)
   $('.box').on('click', setClickValue)
+  // $('#game-board').on('click', onUpdateGame)
 }
 
 module.exports = {
