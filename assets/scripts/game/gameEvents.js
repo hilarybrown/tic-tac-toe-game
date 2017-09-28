@@ -14,31 +14,29 @@ const onCreateGame = function (event) {
     .catch(gameUi.createGameFailure)
 }
 
+// Begin Game Logic
 // game board is made up of an empty array of 9
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const playerX = 'X'
 const playerO = 'O'
 
+// set first move on the board to be an X
+let player = playerX
+
 // switch players between X and O
-let player
-const firstMove = function () {
-  player = playerX
-}
-
-firstMove()
-
 const togglePlayer = function () {
   if (player === playerX) {
     player = playerO
   } else {
     player = playerX
   }
-  $('#game-message').text('Player ' + player + ' has the next move')
+  // only display game message of next move if there is no current winner
+  if (winner === false && moreMoves === true) {
+    $('#game-message').text('Player ' + player + ' has the next move')
+  }
   return store.player
 }
-
-// let rounds = 0 // how many rounds have been played
 
 // 'X' or 'O' shows in box when box is clicked
 const setBoxSymbol = function (player, index) {
@@ -53,14 +51,17 @@ const setClickValue = function () {
   console.log(index)
   if ($(this).text() === '') {
     $(this).text(player)
+    // calls function to set player move in the box
     setBoxSymbol(player, index)
-    //  setEntriesToWinCoord()
+    // call function to look for a winning combo
     findWinner()
+    // call toggle function to switch between 'X' and 'O'
+    noWinner()
     togglePlayer()
-  } else {
-    $('#game-message').text('That box already has a value. Choose another box.')
+  } else { // if box is not empty, display message
+    $('#game-message').text('That box is taken. Choose another box.')
   }
-  console.log(player)
+  console.log('Player' + player)
 }
 
 let winner
@@ -79,20 +80,24 @@ const findWinner = function () {
      ((gameBoard[2] !== '') && (gameBoard[2] === gameBoard[4]) && (gameBoard[4] === gameBoard[6]))) {
     winner = true
     console.log('Player ' + player + ' won!')
-    $('#winner-message').text('Player ' + player + ' won!')
+    $('#winner-message').text('Player ' + player + ' won! Click New Game button to start a new game.')
+    $('#game-message').text('')
     return winner
   }
 }
 
-let moveCount = 0 // start counter at 0 for moves in a game (0-8)
-// determines if a game is a draw & displays message
-// not working. because murphy's law.
-const noWinner = function (moveCount, winner) {
-  if (moveCount === 8 && winner === false) {
-    console.log('Out of moves with no winner. Try again.')
-    $('#winner-message').text('Out of moves with no winner. Try again.')
+let moreMoves
+// determine if there's no winner in a game
+const noWinner = function () {
+  moreMoves = true
+  if (winner === false && gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' && gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' && gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
+    moreMoves = false
+    console.log('Out of moves with no winner. Click New Game button to try again')
+    $('#game-message').text('Out of moves with no winner. Click New Game button to try again')
+    // can I make a function to make the board unclickable?
+    // .off('click', '.box')
   }
-  return noWinner
+  return moreMoves
 }
 
 const addHandlers = function () {
