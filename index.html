@@ -14,29 +14,30 @@
     <body class="container-fluid">
       <h1>Hilary's Tic-Tac-Toe Game</h1>
 
-<div id="game-board" class="gameBoard">
-      <div class="row">
+<div id="game-board" class="gameBoard" style="display: none">
+  <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="0"></div>
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="1"></div>
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="2"></div>
-</div>
+  </div>
 
-<div class="row">
+  <div class="row">
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="3"></div>
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="4"></div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="5"></div>
-</div>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"id="5"></div>
+  </div>
 
-<div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="6"></div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="7"></div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="8"></div>
-</div>
+  <div class="row">
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"id="6"></div>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"id="7"></div>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box"id="8"></div>
+  </div>
 </div>
 <div id="game-message"></div>
 <div id="winner-message"></div>
 
 <h1>User Actions</h1>
+<h2 id="sign-in-message">Sign up or sign in to play!</h2>
 <div id="user-action-message"></div>
 <form id="sign-up">
   <fieldset>
@@ -70,12 +71,13 @@
   <fieldset>
     <legend>Sign Out</legend>
     <input type="submit" name="submit" value="Sign out">
-=======
+  </fieldset>
+</form>
+
 <form id="new-game">
   <fieldset>
     <legend>Start new game</legend>
-    <input type="submit" name="submit" value="Start a new game">
->>>>>>> game-logic
+    <input type="submit" name="submit" value="New Game">
   </fieldset>
 </form>
     </body>

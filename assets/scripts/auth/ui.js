@@ -2,9 +2,14 @@
 
 const store = require('../store')
 
+// store user's data upon successful sign up
+// hide sign-up fields after sucessful sign-up
 const signUpSuccess = function (data) {
   console.log(data)
-  $('#user-action-message').text('You have successfully signed up')
+  store.user = data.user
+  $('#sign-up').hide()
+  $('#sign-in-message').hide()
+  $('#user-action-message').text('Thank you for signing up! Please now sign in below with your email and password to play the game.')
 }
 
 const signUpFailure = function (error) {
@@ -12,9 +17,15 @@ const signUpFailure = function (error) {
   $('#user-action-message').text('Error on sign up')
 }
 
+// hide sign-in fields after successful sign-in until player signs out
+// hide 'sign in to play' message
+// show success message
 const signInSuccess = function (data) {
   console.log(data)
-  $('#user-action-message').text('Signed in successfully')
+  $('#sign-in-message').hide()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#user-action-message').text('Signed in successfully. Click the New Game button to start playing!')
   store.user = data.user
 }
 
@@ -23,9 +34,12 @@ const signInFailure = function (error) {
   $('#user-action-message').text('Error on sign in')
 }
 
+// show success message and clear the input fields
 const changePasswordSuccess = function (data) {
-  console.log('Changed password successfully')
-  $('#user-action-message').text('Changed password successfully')
+  console.log('Password successfully changed')
+  $('#change-password')[0].reset()
+  $('#user-action-message').text('Password successfully changed')
+  console.log(data)
 }
 
 const changePasswordFailure = function (error) {
@@ -33,10 +47,21 @@ const changePasswordFailure = function (error) {
   $('#user-action-message').text('Error on password change')
 }
 
+// once signed out, sign up fields and sign in fields are accessible again
+// sign in and sign up input fields are cleared
+// board is hidden
 const signOutSuccess = function (data) {
   console.log('Signed out successfully')
   $('#user-action-message').text('Come back again soon!')
   store.user = null
+  $('#sign-in')[0].reset()
+  $('#sign-up')[0].reset()
+  $('#sign-in-message').show()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#game-board').hide()
+  $('#game-message').text('')
+  $('#winner-message').text('')
 }
 
 const signOutFailure = function (data) {
