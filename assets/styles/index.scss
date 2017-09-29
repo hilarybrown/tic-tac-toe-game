@@ -1,7 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import './styles';
 
-$background-color: #3b465e;
+$page-color: #3b465e;
 $font-color: #dfdfdf;
 $white: #fff;
 $top-margin: 5%;
@@ -9,17 +10,20 @@ $side-margin: 15%;
 $row-height: 200px;
 $row-width: 600px;
 $box-width: 200px;
-$player-font-size: 48px:
 
 body {
-  background-color: $background-color;
+  background-color: $page-color;
   color: $font-color;
 }
 
 .box {
   border: 1px solid $white;
-  font-size: $player-font-size
-  height: $row-height;
+  height: $box-width;
+  text-align: center;
+  width: $box-width;
+}
+
+h2 {
   text-align: center;
 }
 
@@ -27,14 +31,18 @@ body {
   height: 600px;
   margin: $top-margin $side-margin;
   text-align: center;
-  width: 600px;
+  width: $row-width;
 }
 
 .row {
+  background-color: #bdbdbd;
   height: $row-height;
   width: $row-width;
 }
 
-#square-0 {
-  font-size: $player-font-size;
+form {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
