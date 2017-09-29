@@ -9,6 +9,7 @@ $side-margin: 15%;
 $row-height: 200px;
 $row-width: 600px;
 $box-width: 200px;
+$player-font-size: 48px:
 
 body {
   background-color: $background-color;
@@ -17,7 +18,9 @@ body {
 
 .box {
   border: 1px solid $white;
+  font-size: $player-font-size
   height: $row-height;
+  text-align: center;
 }
 
 .gameBoard {
@@ -30,4 +33,8 @@ body {
 .row {
   height: $row-height;
   width: $row-width;
+}
+
+#square-0 {
+  font-size: $player-font-size;
 }
