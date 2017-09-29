@@ -25,6 +25,7 @@ const signInSuccess = function (data) {
   $('#sign-in-message').hide()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#game-stats').show()
   $('#new-game').show()
   $('#sign-out').show()
   $('#change-password').show()
