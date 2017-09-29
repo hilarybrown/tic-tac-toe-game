@@ -33,5 +33,59 @@
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box" id="square-8"></div>
 </div>
 </div>
+<div id="game-message"></div>
+<div id="winner-message"></div>
+<div id="stats-message"></div>
+
+<h2 id="sign-in-message">Sign up or sign in to play!</h2>
+<div id="user-action-message"></div>
+<form id="sign-up">
+  <fieldset>
+    <legend>Create User</legend>
+    <input type="text" name="credentials[email]" placeholder="Enter Email">
+    <input type="text" name="credentials[password]" placeholder="Enter Password">
+    <input type="text" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+    <input type="submit" name="submit" value="Create User">
+  </fieldset>
+</form>
+
+<form id="sign-in">
+  <fieldset>
+    <legend>Sign In</legend>
+    <input type="text" name="credentials[email]" placeholder="Enter Email">
+    <input type="text" name="credentials[password]" placeholder="Enter Password">
+    <input type="submit" name="submit" value="Sign In">
+  </fieldset>
+</form>
+
+<form id="change-password" style="display: none">
+  <fieldset>
+    <legend>Change Password</legend>
+    <input type="text" name="passwords[old]" placeholder="Old Password">
+    <input type="text" name="passwords[new]" placeholder="New Password">
+    <input type="submit" name="submit" value="Change password">
+  </fieldset>
+</form>
+
+<form id="sign-out" style="display: none">
+  <fieldset>
+    <legend>Sign Out</legend>
+    <input type="submit" name="submit" value="Sign out">
+  </fieldset>
+</form>
+
+<form id="new-game" style="display: none">
+  <fieldset>
+    <legend>Start new game</legend>
+    <input type="submit" name="submit" value="New Game">
+  </fieldset>
+</form>
+
+<form id="game-stats" style="display: none">
+  <fieldset>
+    <legend>Game Stats</legend>
+    <input type="submit" name="submit" value="See Player Stats">
+  </fieldset>
+</form>
     </body>
 </html>
