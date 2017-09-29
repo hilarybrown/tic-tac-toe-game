@@ -1,6 +1,5 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import './styles';
 
 $page-color: #3b465e;
 $font-color: #dfdfdf;
@@ -10,6 +9,7 @@ $side-margin: 15%;
 $row-height: 200px;
 $row-width: 600px;
 $box-width: 200px;
+$player-color: #388e3c;
 
 body {
   background-color: $page-color;
@@ -17,21 +17,25 @@ body {
 }
 
 .box {
+  background-color: #bdbdbd;
   border: 1px solid $white;
-  height: $box-width;
-  text-align: center;
-  width: $box-width;
-}
-
-h2 {
-  text-align: center;
+  color: $player-color;
+  display: inline-block;
+  font-size: 130px;
+  height: 200px;
+  width: 200px;
 }
 
 .gameBoard {
   height: 600px;
-  margin: $top-margin $side-margin;
+  margin: auto;
+  padding: 0;
   text-align: center;
-  width: $row-width;
+  width: 600px;
+}
+
+h2 {
+  text-align: center;
 }
 
 .row {
@@ -41,8 +45,13 @@ h2 {
 }
 
 form {
-  width: 600px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 600px;
+}
+
+legend {
+  color: $font-color;
+  font-size: 16px;
 }
