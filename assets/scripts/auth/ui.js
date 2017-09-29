@@ -54,7 +54,7 @@ const changePasswordFailure = function (error) {
 
 // once signed out, sign up fields and sign in fields are accessible again
 // sign in and sign up input fields are cleared
-// board is hidden
+// board is hidden after sign out
 const signOutSuccess = function (data) {
   console.log('Signed out successfully')
   $('#user-action-message').text('Come back again soon!')
