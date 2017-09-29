@@ -82,8 +82,9 @@ const setClickValue = function () {
     setBoxSymbol(player, index)
     // call function to look for a winning combo
     findWinner()
-    // call toggle function to switch between 'X' and 'O'
+    // call function to look for a draw
     noWinner()
+    // call toggle function to switch between 'X' and 'O'
     togglePlayer()
   } else { // if box is not empty, display message
     $('#game-message').text('That box is taken. Choose another box.')
