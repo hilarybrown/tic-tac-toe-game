@@ -8,6 +8,7 @@ const store = require('../store')
 
 let gameBoard = []
 
+// clear the array to start with fresh game
 const onCreateGame = function (event) {
   gameBoard = ['', '', '', '', '', '', '', '', '']
   player = playerX
@@ -115,8 +116,7 @@ const findWinner = function (index, value) {
     $('#winner-message').text('Player ' + player + ' won! Click New Game button to start a new game.')
     $('#game-message').text('')
     $('#game-board').hide()
-    // can get board to be unclickable, but can't get it to be clickable again on create game
-    // $('.box').off('click')
+    // hide board, display winner and tell user to click button to start a new game
     return winner
   }
 }
@@ -131,8 +131,7 @@ const noWinner = function () {
     $('#game-message').text('Out of moves with no winner. Click New Game button to try again')
     $('#game-board').hide()
     $('.box').text('')
-    // can get board to be unclickable, but can't get it to be clickable again on create game
-    // $('.box').off('click')
+    // hide board, display draw message and tell user to click button to start a new game
     return moreMoves
   }
 }
