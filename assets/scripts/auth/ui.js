@@ -62,6 +62,7 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#game-stats').hide()
+  $('#stats-message').hide()
   $('#sign-in')[0].reset()
   $('#sign-up')[0].reset()
   $('#sign-in-message').show()
