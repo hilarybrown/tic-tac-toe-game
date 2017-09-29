@@ -6,7 +6,11 @@ const gameApi = require('./gameApi')
 const gameUi = require('./gameUi')
 const store = require('../store')
 
+let gameBoard = []
+
 const onCreateGame = function (event) {
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  player = playerX
   event.preventDefault()
   const data = getFormFields(event.target)
   gameApi.createGame(data)
@@ -14,20 +18,22 @@ const onCreateGame = function (event) {
     .catch(gameUi.createGameFailure)
 }
 
-// this code is not working. need to take a look into why
-const onUpdateGame = function (index, value, over) {
-  console.log('onUpdateGame is ' + onUpdateGame)
+// grab info of which box is clicked, and pass it on
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const index = $(this).attr('id')
+  const value = $(this).text()
   const data = {
     'game': {
       'cell': {
         'index': index,
         'value': value
-      },
-      'over': over
+      }
     }
   }
   console.log(data)
-  gameApi.updateGame(JSON.stringify(data))
+  console.log(event.currentTarget)
+  gameApi.updateGame(data)
     .then(gameUi.updateGameSuccess)
     .catch(gameUi.updateGameFailure)
 }
@@ -42,7 +48,6 @@ const onGetStats = function (event) {
 
 // Begin Game Logic
 // game board is made up of an empty array of 9
-const gameBoard = ['', '', '', '', '', '', '', '', '']
 
 const playerX = 'X'
 const playerO = 'O'
@@ -57,7 +62,6 @@ const togglePlayer = function () {
   } else {
     player = playerX
   }
-  onUpdateGame()
   // only display game message of next move if there is no current winner
   if (winner === false && moreMoves === true) {
     $('#game-message').text('Player ' + player + ' has the next move')
@@ -95,7 +99,7 @@ const setClickValue = function () {
 let winner
 // below code to find a winner and determine a draw not working
 // if statements to find winning combinations for either player and display message
-const findWinner = function () {
+const findWinner = function (index, value) {
   // start with winner = false & when a winning combo is found, winner is then set to true
   winner = false
   if (((gameBoard[0] !== '') && (gameBoard[0] === gameBoard[3]) && (gameBoard[3] === gameBoard[6])) ||
@@ -137,6 +141,7 @@ const addHandlers = function () {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', setClickValue)
   $('#game-stats').on('click', onGetStats)
+  $('.box').on('click', onUpdateGame)
 }
 
 module.exports = {
