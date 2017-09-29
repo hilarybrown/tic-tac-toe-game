@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store')
-const gameEvents = require('./gameEvents')
 
 const createGameSuccess = function (data) {
   store.game = data.game
@@ -29,12 +28,8 @@ const updateGameFailure = function (data) {
 }
 
 const getStatsSuccess = function (data) {
-  const gamesWon = function (winner) {
-    (gameEvents.findWinner.player = 'X')
-  }
-  // games won is not displaying amount of of games won. not yet at least.
   $('#stats-message').show()
-  $('#stats-message').text('You have played ' + data.games.length + ' games under this account & have won ' + gamesWon.length + '. Nice work!')
+  $('#stats-message').text('You have played ' + data.games.length + ' games under this account. Nice work!')
 }
 
 const getStatsFailure = function (data) {

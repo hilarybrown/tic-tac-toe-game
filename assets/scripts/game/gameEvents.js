@@ -109,6 +109,9 @@ const findWinner = function () {
     $('#winner-message').show()
     $('#winner-message').text('Player ' + player + ' won! Click New Game button to start a new game.')
     $('#game-message').text('')
+    $('#game-board').hide()
+    // can get board to be unclickable, but can't get it to be clickable again on create game
+    // $('.box').off('click')
     return winner
   }
 }
@@ -121,17 +124,18 @@ const noWinner = function () {
     moreMoves = false
     console.log('Out of moves with no winner. Click New Game button to try again')
     $('#game-message').text('Out of moves with no winner. Click New Game button to try again')
-    // can I make a function to make the board unclickable?
-    // .off('click', '.box')
+    $('#game-board').hide()
+    $('.box').text('')
+    // can get board to be unclickable, but can't get it to be clickable again on create game
+    // $('.box').off('click')
+    return moreMoves
   }
-  return moreMoves
 }
 
 const addHandlers = function () {
-  $('#new-game').on('submit', onCreateGame)
+  $('#new-game').on('click', onCreateGame)
   $('.box').on('click', setClickValue)
   $('#game-stats').on('click', onGetStats)
-  // $('#game-board').on('click', onUpdateGame)
 }
 
 module.exports = {
