@@ -29,7 +29,15 @@ const onUpdateGame = function (index, value, over) {
   console.log(data)
   gameApi.updateGame(JSON.stringify(data))
     .then(gameUi.updateGameSuccess)
-    .catch(gameUi.updateGameError)
+    .catch(gameUi.updateGameFailure)
+}
+
+const onGetStats = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  gameApi.getStats(data)
+    .then(gameUi.getStatsSuccess)
+    .catch(gameUi.getStatsFailure)
 }
 
 // Begin Game Logic
@@ -98,7 +106,7 @@ const findWinner = function () {
      ((gameBoard[0] !== '') && (gameBoard[0] === gameBoard[4]) && (gameBoard[4] === gameBoard[8])) ||
      ((gameBoard[2] !== '') && (gameBoard[2] === gameBoard[4]) && (gameBoard[4] === gameBoard[6]))) {
     winner = true
-    console.log('Player ' + player + ' won!')
+    $('#winner-message').show()
     $('#winner-message').text('Player ' + player + ' won! Click New Game button to start a new game.')
     $('#game-message').text('')
     return winner
@@ -122,6 +130,7 @@ const noWinner = function () {
 const addHandlers = function () {
   $('#new-game').on('submit', onCreateGame)
   $('.box').on('click', setClickValue)
+  $('#game-stats').on('click', onGetStats)
   // $('#game-board').on('click', onUpdateGame)
 }
 
