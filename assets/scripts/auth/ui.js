@@ -25,6 +25,10 @@ const signInSuccess = function (data) {
   $('#sign-in-message').hide()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#game-stats').show()
+  $('#new-game').show()
+  $('#sign-out').show()
+  $('#change-password').show()
   $('#user-action-message').text('Signed in successfully. Click the New Game button to start playing!')
   store.user = data.user
 }
@@ -54,6 +58,9 @@ const signOutSuccess = function (data) {
   console.log('Signed out successfully')
   $('#user-action-message').text('Come back again soon!')
   store.user = null
+  $('#sign-out').hide()
+  $('#change-password').hide()
+  $('#game-stats').hide()
   $('#sign-in')[0].reset()
   $('#sign-up')[0].reset()
   $('#sign-in-message').show()
