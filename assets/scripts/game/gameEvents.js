@@ -126,7 +126,6 @@ const noWinner = function () {
     console.log('Out of moves with no winner. Click New Game button to try again')
     $('#game-message').text('Out of moves with no winner. Click New Game button to try again')
     $('#game-board').hide()
-    $('.box').text('')
     // can get board to be unclickable, but can't get it to be clickable again on create game
     // $('.box').off('click')
     return moreMoves
