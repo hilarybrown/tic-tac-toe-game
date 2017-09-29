@@ -8,6 +8,7 @@ const signUpSuccess = function (data) {
   console.log(data)
   store.user = data.user
   $('#sign-up').hide()
+  $('#new-game').hide()
   $('#sign-in-message').hide()
   $('#user-action-message').text('Thank you for signing up! Please now sign in below with your email and password to play the game.')
 }
