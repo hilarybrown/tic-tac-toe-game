@@ -47,9 +47,9 @@ Once I felt comfortable with where my game logic was, I moved onto the Game API 
 
 I created two wireframes for my game, one to show the initial Sign-Up/Sign-In screen, and one to display the screen in Game Play mode.
 
-![Sign-Up/Sign-In screen](https://imgur.com/57wyhey)
+![Sign-Up/Sign-In screen](https://imgur.com/57wyhey.jpg)
 
-![Game Play Screen](https://imgur.com/OrsnnMz)
+![Game Play Screen](https://imgur.com/OrsnnMz.jpg)
 
 ## User Stories
 
