@@ -5,7 +5,6 @@ const store = require('../store')
 // store user's data upon successful sign up
 // hide sign-up fields after sucessful sign-up
 const signUpSuccess = function (data) {
-  console.log(data)
   store.user = data.user
   $('#sign-up').hide()
   $('#new-game').hide()
@@ -41,7 +40,6 @@ const signInFailure = function (error) {
 
 // show success message and clear the input fields
 const changePasswordSuccess = function (data) {
-  console.log('Password successfully changed')
   $('#change-password')[0].reset()
   $('#user-action-message').text('Password successfully changed')
   console.log(data)
@@ -56,9 +54,9 @@ const changePasswordFailure = function (error) {
 // sign in and sign up input fields are cleared
 // board is hidden after sign out
 const signOutSuccess = function (data) {
-  console.log('Signed out successfully')
   $('#user-action-message').text('Come back again soon!')
   store.user = null
+  $('#new-game').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#game-stats').hide()
