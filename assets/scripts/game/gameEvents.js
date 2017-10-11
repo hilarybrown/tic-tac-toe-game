@@ -98,7 +98,6 @@ const setClickValue = function () {
 }
 
 let winner
-// below code to find a winner and determine a draw not working
 // if statements to find winning combinations for either player and display message
 const findWinner = function (index, value) {
   // start with winner = false & when a winning combo is found, winner is then set to true
