@@ -48,6 +48,7 @@ const changePasswordSuccess = function (data) {
 
 const changePasswordFailure = function (data) {
   // console.error(data)
+  $('#user-action-message').show()
   $('#user-action-message').text('Error on password change')
 }
 
