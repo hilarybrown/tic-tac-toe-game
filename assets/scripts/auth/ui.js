@@ -41,6 +41,7 @@ const signInFailure = function (data) {
 // show success message and clear the input fields
 const changePasswordSuccess = function (data) {
   $('#change-password')[0].reset()
+  $('#user-action-message').show()
   $('#user-action-message').text('Password successfully changed')
   console.log(data)
 }
