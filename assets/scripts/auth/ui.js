@@ -21,7 +21,7 @@ const signUpFailure = function (error) {
 // hide 'sign in to play' message
 // show success message
 const signInSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#sign-in-message').hide()
   $('#sign-in').hide()
   $('#sign-up').hide()
@@ -33,8 +33,8 @@ const signInSuccess = function (data) {
   store.user = data.user
 }
 
-const signInFailure = function (error) {
-  console.error(error)
+const signInFailure = function (data) {
+  // console.error(data)
   $('#user-action-message').text('Error on sign in')
 }
 
@@ -45,8 +45,8 @@ const changePasswordSuccess = function (data) {
   console.log(data)
 }
 
-const changePasswordFailure = function (error) {
-  console.error(error)
+const changePasswordFailure = function (data) {
+  // console.error(data)
   $('#user-action-message').text('Error on password change')
 }
 
@@ -72,7 +72,7 @@ const signOutSuccess = function (data) {
 }
 
 const signOutFailure = function (data) {
-  console.log('Error on sign out')
+  // console.log('Error on sign out')
   $('#user-action-message').text('Error on sign out')
 }
 

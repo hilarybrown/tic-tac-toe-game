@@ -126,7 +126,7 @@ const noWinner = function () {
   moreMoves = true
   if (winner === false && gameBoard[0] !== '' && gameBoard[1] !== '' && gameBoard[2] !== '' && gameBoard[3] !== '' && gameBoard[4] !== '' && gameBoard[5] !== '' && gameBoard[6] !== '' && gameBoard[7] !== '' && gameBoard[8] !== '') {
     moreMoves = false
-    console.log('Out of moves with no winner. Click New Game button to try again')
+    // console.log('Out of moves with no winner. Click New Game button to try again')
     $('#game-message').text('Out of moves with no winner. Click New Game button to try again')
     $('#game-board').hide()
     $('.box').text('')
