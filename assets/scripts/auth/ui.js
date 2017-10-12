@@ -12,8 +12,8 @@ const signUpSuccess = function (data) {
   $('#user-action-message').text('Thank you for signing up! Please now sign in below with your email and password to play the game.')
 }
 
-const signUpFailure = function (error) {
-  console.error(error)
+const signUpFailure = function (data) {
+  // console.error(error)
   $('#user-action-message').text('Error on sign up')
 }
 
@@ -55,6 +55,7 @@ const changePasswordFailure = function (data) {
 // sign in and sign up input fields are cleared
 // board is hidden after sign out
 const signOutSuccess = function (data) {
+  $('#user-action-message').show()
   $('#user-action-message').text('Come back again soon!')
   store.user = null
   $('#new-game').hide()

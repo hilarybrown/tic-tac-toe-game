@@ -32,8 +32,8 @@ const onUpdateGame = function (event) {
       }
     }
   }
-  console.log(data)
-  console.log(event.currentTarget)
+  // console.log(data)
+  // console.log(event.currentTarget)
   gameApi.updateGame(data)
     .then(gameUi.updateGameSuccess)
     .catch(gameUi.updateGameFailure)
@@ -80,7 +80,7 @@ const setBoxSymbol = function (player, index) {
 const setClickValue = function () {
   $('#game-message').text('')
   const index = $(this).attr('id')
-  console.log(index)
+  // console.log(index)
   if ($(this).text() === '') {
     $(this).text(player)
     // calls function to set player move in the box
@@ -94,7 +94,7 @@ const setClickValue = function () {
   } else { // if box is not empty, display message
     $('#game-message').text('That box is taken. Choose another box.')
   }
-  console.log('Player' + player)
+  // console.log('Player' + player)
 }
 
 let winner
